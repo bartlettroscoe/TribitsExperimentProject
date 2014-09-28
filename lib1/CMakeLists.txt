@@ -1,0 +1,9 @@
+ADD_LIBRARY(lib1
+  lib1.hpp lib1.cpp
+  )
+TARGET_INCLUDE_DIRECTORIES(lib1
+  BEFORE PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+  )
+ADD_EXECUTABLE(test_lib1 test_lib1.cpp)
+TARGET_LINK_LIBRARIES(test_lib1 lib1)
+ADD_TEST(test_lib1 test_lib1)
